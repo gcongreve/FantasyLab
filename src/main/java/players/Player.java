@@ -45,4 +45,8 @@ public abstract class Player {
     public ArrayList<TreasureType> getTreasure() {
         return treasure;
     }
+
+    public boolean isDead(){
+       return health >= 0;
+    }
 }

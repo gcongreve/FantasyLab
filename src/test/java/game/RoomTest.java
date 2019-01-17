@@ -77,5 +77,12 @@ public class RoomTest {
         assertEquals(9, wizard.getHealth());
     }
 
+    @Test
+    public void playerCanKillEnemy(){
+        room.playerBattleEnemy(enemy, fighter);
+        room.playerBattleEnemy(enemy, fighter);
+        assertEquals(true, enemy.isDead());
+    }
+
 
 }

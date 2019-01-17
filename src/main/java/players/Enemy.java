@@ -8,5 +8,9 @@ public class Enemy extends Fighter {
         super(name, weapon, goodie);
     }
 
+    public void fight(Player player) {
+        player.loseHealth(useWeapon());
+    }
+
 
 }

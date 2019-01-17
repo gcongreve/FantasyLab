@@ -3,7 +3,7 @@ package enums;
 public enum SpellType {
 
     ABRACADABRA(3),
-    HOCUSPOCUS(-3);
+    HOCUSPOCUS(2);
 
     private final int damage;
 

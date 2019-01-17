@@ -23,4 +23,12 @@ public class Cleric extends Player implements IHeal {
     public int useHealingTool(){
         return healingTool.getDamage();
     }
+
+
+    @Override
+    public void revive(Player player) {
+        if(player.isGoodie()){
+            player.gainHealth(useHealingTool());
+        }
+    }
 }

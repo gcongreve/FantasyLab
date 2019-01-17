@@ -1,5 +1,6 @@
 package game;
 
+import behaviours.IDamage;
 import enums.TreasureType;
 import players.Enemy;
 import players.Player;
@@ -35,4 +36,15 @@ public class Room {
     public ArrayList<Player> getSquad() {
         return squad;
     }
+
+    public boolean findPlayer(Player player){
+        return squad.contains(player);
+    }
+
+    public void battle(Enemy enemy, IDamage player){
+        player.fight(enemy);
+    }
+
+
+
 }

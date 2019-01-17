@@ -40,5 +40,18 @@ public class Wizard extends Player implements IDamage, IHeal {
         return this.mythicalCreature.getDamage();
     }
 
+    public void fight(Player player) {
+        if(player instanceof Enemy){
+            player.loseHealth(castSpell());
+        }
+    }
+
+    @Override
+    public void revive(Player player) {
+        if(player.isGoodie()){
+            player.gainHealth(castSpell());
+        }
+    }
+
 
 }

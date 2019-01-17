@@ -26,4 +26,10 @@ public class Fighter extends Player implements IDamage {
     }
 
 
+    @Override
+    public void fight(Player player) {
+        if(player instanceof Enemy){
+            player.loseHealth(useWeapon());
+        }
+    }
 }

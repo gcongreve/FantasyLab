@@ -53,4 +53,16 @@ public class RoomTest {
     public void getSquad() {
         assertEquals(squad, room.getSquad());
     }
+
+    @Test
+    public void findSpecificPlayer(){
+        assertEquals(cleric, room.findPlayer(cleric));
+    }
+
+    @Test
+    public void playerCanBattle(){
+        room.battle(enemy, fighter);
+        assertEquals(5, enemy.getHealth());
+    }
+    
 }

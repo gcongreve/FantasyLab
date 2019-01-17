@@ -1,9 +1,12 @@
 package game;
 
 import behaviours.IDamage;
+import behaviours.IHeal;
 import enums.TreasureType;
+import players.Cleric;
 import players.Enemy;
 import players.Player;
+import players.Wizard;
 
 import java.util.ArrayList;
 
@@ -41,10 +44,16 @@ public class Room {
         return squad.contains(player);
     }
 
-    public void battle(Enemy enemy, IDamage player){
+    public void playerBattleEnemy(Enemy enemy, IDamage player){
         player.fight(enemy);
     }
 
+    public void enemyBattlePlayer(IDamage enemy, Player player){
+        enemy.fight(player);
+    }
 
 
+    public void playerGetsRevived(IHeal healer, Player player) {
+        healer.revive(player);
+    }
 }

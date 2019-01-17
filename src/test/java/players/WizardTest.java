@@ -2,6 +2,7 @@ package players;
 
 import enums.MythicalCreatureType;
 import enums.SpellType;
+import enums.TreasureType;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -10,10 +11,12 @@ import static org.junit.Assert.*;
 public class WizardTest {
 
     Wizard gandalf;
+    TreasureType treasure;
 
     @Before
     public void before(){
         gandalf = new Wizard("Gandalf", true);
+        treasure = TreasureType.TIN;
     }
 
     @Test
@@ -40,5 +43,11 @@ public class WizardTest {
     public void summonCreature(){
         gandalf.addCreature(MythicalCreatureType.UNICORN);
         assertEquals(1, gandalf.summonCreature());
+    }
+
+    @Test
+    public void canGetTreasure(){
+        gandalf.addTreasure(treasure);
+        assertEquals(1, gandalf.getTreasure().size());
     }
 }

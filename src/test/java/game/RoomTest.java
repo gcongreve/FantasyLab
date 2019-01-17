@@ -7,7 +7,6 @@ import org.junit.Before;
 import org.junit.Test;
 import players.*;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 import static org.junit.Assert.*;
@@ -61,8 +60,22 @@ public class RoomTest {
 
     @Test
     public void playerCanBattle(){
-        room.battle(enemy, fighter);
+        room.playerBattleEnemy(enemy, fighter);
         assertEquals(5, enemy.getHealth());
     }
-    
+
+    @Test
+    public void enemyCanBattlePlayer(){
+        room.enemyBattlePlayer(enemy, cleric);
+        assertEquals(8, cleric.getHealth());
+    }
+
+    @Test
+    public void canRevive(){
+        room.enemyBattlePlayer(enemy, wizard);
+        room.playerGetsRevived(cleric, wizard);
+        assertEquals(9, wizard.getHealth());
+    }
+
+
 }

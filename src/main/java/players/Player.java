@@ -20,6 +20,14 @@ public abstract class Player {
         return health;
     }
 
+    public int loseHealth(int damage){
+        return this.health -= damage;
+    }
+
+    public int gainHealth(int damage){
+        return this.health += damage;
+    }
+
     public boolean isGoodie() {
         return goodie;
     }

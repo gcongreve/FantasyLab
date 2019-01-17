@@ -1,9 +1,11 @@
 package players;
 
+import behaviours.IDamage;
+import behaviours.IHeal;
 import enums.MythicalCreatureType;
 import enums.SpellType;
 
-public class Wizard extends Player{
+public class Wizard extends Player implements IDamage, IHeal {
 
     private SpellType spell;
     private MythicalCreatureType mythicalCreature;

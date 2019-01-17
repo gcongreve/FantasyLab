@@ -1,8 +1,9 @@
 package players;
 
+import behaviours.IDamage;
 import enums.WeaponType;
 
-public class Fighter extends Player{
+public class Fighter extends Player implements IDamage {
 
     private WeaponType weapon;
 

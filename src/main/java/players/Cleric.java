@@ -1,8 +1,9 @@
 package players;
 
+import behaviours.IHeal;
 import enums.HealingToolType;
 
-public class Cleric extends Player {
+public class Cleric extends Player implements IHeal {
 
     private HealingToolType healingTool;
 
